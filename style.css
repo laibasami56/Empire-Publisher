@@ -1,4 +1,4 @@
- /* ==========================================================================
+/* ==========================================================================
    Empire Publisher Press — style.css
    Plain custom CSS (no framework). One file for the whole site.
    ========================================================================== */
@@ -1720,4 +1720,49 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.82rem;
   font-family: inherit;
   color: var(--body-c);
+}
+/* --------------------------------------------------------------------------
+   TESTIMONIALS — static 3-card grid (Services page, middle card highlighted)
+   -------------------------------------------------------------------------- */
+.testi-static-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.testi-static-card {
+  background: var(--white);
+  border: 1px solid var(--border-c);
+  border-radius: 12px;
+  padding: 28px 26px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testi-static-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(11,26,46,0.1); }
+.testi-static-card .avatar { margin: 0 0 18px; }
+.testi-static-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--body-c);
+  margin-bottom: 18px;
+}
+.testi-static-card strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.testi-static-card--highlight {
+  background: var(--navy);
+  border-color: var(--navy);
+  transform: translateY(-10px);
+}
+.testi-static-card--highlight p { color: rgba(255,255,255,0.85); }
+.testi-static-card--highlight strong { color: var(--white); }
+.testi-static-card--highlight:hover { transform: translateY(-14px); box-shadow: 0 20px 36px rgba(11,26,46,0.28); }
+
+@media (max-width: 900px) {
+  .testi-static-grid { grid-template-columns: 1fr; }
+  .testi-static-card--highlight { transform: none; }
+  .testi-static-card--highlight:hover { transform: translateY(-4px); }
 }
